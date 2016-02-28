@@ -11,7 +11,10 @@ module.exports = {
   	loaders: [{
   	  exclude: /node_modules/,
   	  loader: 'babel'  		
-  	}]
+  	}, {
+      test: /\.css$/, // Only .css files
+      loader: 'style!css' // Run both loaders
+    }]
   },
   resolve: {
   	extensions: ['', '.js', '.jsx']
