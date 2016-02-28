@@ -1,0 +1,13 @@
+language: java
+jdk:
+- oraclejdk8
+notifications:
+  email:
+    on_success: never
+    on_failure: always
+after_success:
+  - mvn clean cobertura:cobertura coveralls:report
+deploy:
+  provider: heroku
+  api_key: "heroku key"
+  app: starter

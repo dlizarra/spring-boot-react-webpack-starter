@@ -1,0 +1,38 @@
+# Operating System Files
+*.DS_Store
+Thumbs.db
+
+# Build Files #
+bin
+target
+build/
+.gradle
+
+# Eclipse Project Files #
+.classpath
+.project
+.settings
+
+# STS Project Files #
+.springBeans
+
+# IntelliJ IDEA Files #
+*.iml
+*.ipr
+*.iws
+*.idea
+
+# NetBeans Project Files #
+nbactions.xml
+nb-configuration.xml
+
+# Spring Roo
+log.roo
+
+# PMD
+.pmd
+
+# Node
+src/main/frontend/node_modules
+bundle.js
+npm-debug.log
