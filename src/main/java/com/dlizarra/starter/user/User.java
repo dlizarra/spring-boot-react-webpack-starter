@@ -17,7 +17,7 @@ import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 
-import com.dlizarra.starter.CustomUserDetails;
+import com.dlizarra.starter.support.security.CustomUserDetails;
 
 import com.dlizarra.starter.role.Role;
 
