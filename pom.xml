@@ -134,6 +134,8 @@
 					<repoToken>coveralls repository token</repoToken>
 				</configuration>
 			</plugin>
+			<!-- Frontend -->
+			<!-- Frontend -->
 			<plugin>
 				<groupId>com.github.eirslett</groupId>
 				<artifactId>frontend-maven-plugin</artifactId>
