@@ -10,5 +10,14 @@ To run the app you just need to:
     cd starter
     mvn spring-boot:run
 
-And then go to `localhost:8080` to confirm the app is running. You can also 
+Now you can:
+
+    # Visit the homepage
+    http://localhost:8080
+    
+    # Go to the sample REST endpoint /users
+    http:localhost:8080/users
+    
+    # Login to the H2 console (JDBC URL: 'jdbc:h2:mem:embedded', user = 'h2')
+    http:localhost:8080/h2-console
 
