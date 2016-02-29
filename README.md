@@ -15,7 +15,7 @@ Now you can:
     # Visit the homepage
     http://localhost:8080
     
-    # Go to the sample REST endpoint /users
+    # Go to the sample REST endpoint
     http://localhost:8080/users
     
     # Login to the H2 console (JDBC URL: 'jdbc:h2:mem:embedded', user = 'h2')
