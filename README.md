@@ -16,8 +16,8 @@ Now you can:
     http://localhost:8080
     
     # Go to the sample REST endpoint /users
-    http:localhost:8080/users
+    http://localhost:8080/users
     
     # Login to the H2 console (JDBC URL: 'jdbc:h2:mem:embedded', user = 'h2')
-    http:localhost:8080/h2-console
+    http://localhost:8080/h2-console
 
