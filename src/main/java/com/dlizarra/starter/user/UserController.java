@@ -23,16 +23,4 @@ public class UserController {
 		return userService.getUsers();
 	}
 
-	@RequestMapping(value = "/users", method = RequestMethod.POST)
-	//@ResponseStatus(HttpStatus.CREATED)
-	public void create(@Valid @RequestBody final UserDto user) {
-		userService.createUser(user, RoleName.ROLE_USER);
-	}
-
-	@RequestMapping(value = "/users/{id}", method = RequestMethod.PUT)
-	public void update(@PathVariable("id") final Integer id, @Valid @RequestBody final UserDto project) {
-
-	}
-
-
 }

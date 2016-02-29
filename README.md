@@ -10,5 +10,5 @@ To run the app you just need to:
     cd starter
     mvn spring-boot:run
 
-And then go to `localhost:8080` to confirm the app is running.
+And then go to `localhost:8080` to confirm the app is running. You can also 
 
