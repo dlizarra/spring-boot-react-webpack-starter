@@ -4,7 +4,7 @@
   "description": "Frontend",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --history-api-fallback --port 3000"
+    "start": "webpack-dev-server --host 0.0.0.0 --port 9090 --hot --inline --config webpack.config.js"
   },
   "repository": {
     "type": "git",
@@ -19,7 +19,8 @@
     "css-loader": "^0.23.1",
     "style-loader": "^0.13.0",
     "webpack": "^1.12.14",
-    "webpack-dev-server": "^1.14.1"
+    "webpack-dev-server": "^1.14.1",
+    "webpack-hot-middleware": "^2.8.1"
   },
   "dependencies": {
     "axios": "^0.9.1",
