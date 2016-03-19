@@ -1,9 +1,9 @@
 package com.dlizarra.starter;
 
-public class StartupHubMain {
+public class StarterMain {
 
 	public static void main(final String... args) {
-		new StartupHubApplication(AppConfig.class).run(args);
+		new StarterApplication(AppConfig.class).run(args);
 	}
 
 }

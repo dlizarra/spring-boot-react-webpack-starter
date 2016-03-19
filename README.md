@@ -1,7 +1,7 @@
 # Spring Boot and React starter app
 
 > Starter webapp using Spring Boot on the backend and React on the frontend, with 
-Maven and Webpack as build tools.
+Maven and Webpack as build tools, with hot-reloading on both sides.
 
 ## Quickstart
 To run the app you just need to:
@@ -21,3 +21,51 @@ Now you can:
     # Login to the H2 console (JDBC URL: 'jdbc:h2:mem:embedded', user = 'h2')
     http://localhost:8080/h2-console
 
+## Start developing
+The Java code is available at `src/main/java` as usual, and the frontend files are in 
+`src/main/frontend`.
+
+### Running the backend
+Run `StarterMain` class from your IDE.
+
+### Running the frontend
+Go to `src/main/frontend` and run `npm start`.
+
+Now we should work with `localhost:9090` (this is where we'll see our live changes reflected)
+ instead of `localhost:8080`.
+
+### Hot reloading
+In the <b>backend</b> we make use of Spring DevTools to enable hot reloading, 
+so every time we make a change in our files an application restart will
+be triggered automatically.
+
+Keep in mind that Spring DevTools automatic restart only works if we run the 
+application by running the main method in `StarterMain`, and not if for example we run 
+the app with maven with `mvn spring-boot:run`.
+
+In the <b>frontend</b> we use Webpack Dev Server hot module replacement 
+through the npm script `start`. Once the script is running the Dev Server will be 
+watching for any changes on our frontend files.
+
+This way we can be really productive since we don't have to worry about recompiling and deploying
+our server or client side code every time we make changes.
+
+### Other ways of running the app
+#### Run everything from Maven
+
+    mvn generate-resources spring-boot:run
+
+The Maven goal `generate-resources` will execute the frontend-maven-plugin to install Node
+and Npm the first time, run npm install to download all the libraries  that are not 
+present already and tell webpack to generate our `bundle.js`. It's the equivalent of running `webpack` 
+or `npm start` on a terminal.
+
+#### Run Maven and Webpack separately
+
+    mvn spring-boot:run
+In a second terminal:
+    
+    cd src/main/frontend
+    webpack
+
+## Tech stack and libraries

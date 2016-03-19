@@ -13,7 +13,7 @@ import com.zaxxer.hikari.HikariDataSource;
 @Configuration
 public class DatabaseConfig {
 
-	@Profile({ StartupHubProfiles.STANDALONE, StartupHubProfiles.TEST })
+	@Profile({ StarterProfiles.STANDALONE, StarterProfiles.TEST })
 	@PropertySource("classpath:application-default.properties") // Not loaded by naming convention
 	@Configuration
 	static class StandaloneDatabaseConfig {
@@ -26,7 +26,7 @@ public class DatabaseConfig {
 		}
 	}
 
-	@Profile(StartupHubProfiles.STAGING)
+	@Profile(StarterProfiles.STAGING)
 	@Configuration
 	static class StagingDatabaseConfig {
 		@Bean
@@ -38,7 +38,7 @@ public class DatabaseConfig {
 		}
 	}
 
-	@Profile(StartupHubProfiles.PRODUCTION)
+	@Profile(StarterProfiles.PRODUCTION)
 	@Configuration
 	static class ProuctionDatabaseConfig {
 		@Bean

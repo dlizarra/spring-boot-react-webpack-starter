@@ -1,21 +1,15 @@
-var path = require("path");
+var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
     entry: [
-        "./app/index.js",
-        //'webpack-dev-server/client?http://0.0.0.0:9090',
-        //'webpack/hot/only-dev-server'
+        './app/index.js'
     ],
     output: {
         path: path.resolve(__dirname, '../../../target/classes/static'),
-        //publicPath: 'http://localhost:9090/assets/',
+        publicPath: '',
         filename: 'bundle.js'
     },
-    plugins: [
-        new webpack.HotModuleReplacementPlugin(),
-        new webpack.NoErrorsPlugin()
-    ],
     module: {
         loaders: [{
             exclude: /node_modules/,
@@ -28,8 +22,17 @@ module.exports = {
     resolve: {
         extensions: ['', '.js', '.jsx']
     },
-    devtool: 'source-map',
-    //devServer: {
-    //    historyApiFallback: true
-    //}
+    devServer: {
+        port: 9090,
+        proxy: {
+            '/*': {
+                target: 'http://localhost:8080',
+                secure: false,
+                prependPath: false
+            }
+        },
+        publicPath: 'http://localhost:9090/',
+        historyApiFallback: true
+    },
+    devtool: 'source-map'
 };
