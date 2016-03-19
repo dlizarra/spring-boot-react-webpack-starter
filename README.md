@@ -1,7 +1,7 @@
 # Spring Boot and React starter app
 
 > Starter webapp using Spring Boot on the backend and React on the frontend, with 
-Maven and Webpack as build tools, with hot-reloading on both sides.
+Maven and Webpack as build tools, with hot reloading on both sides and with no xml configuration.
 
 ## Quickstart
 To run the app you just need to:
@@ -35,7 +35,7 @@ Now we should work with `localhost:9090` (this is where we'll see our live chang
  instead of `localhost:8080`.
 
 ### Hot reloading
-In the <b>backend</b> we make use of Spring DevTools to enable hot reloading, 
+In the **backend** we make use of Spring DevTools to enable hot reloading, 
 so every time we make a change in our files an application restart will
 be triggered automatically.
 
@@ -43,7 +43,7 @@ Keep in mind that Spring DevTools automatic restart only works if we run the
 application by running the main method in `StarterMain`, and not if for example we run 
 the app with maven with `mvn spring-boot:run`.
 
-In the <b>frontend</b> we use Webpack Dev Server hot module replacement 
+In the **frontend** we use Webpack Dev Server hot module replacement 
 through the npm script `start`. Once the script is running the Dev Server will be 
 watching for any changes on our frontend files.
 
@@ -68,4 +68,25 @@ In a second terminal:
     cd src/main/frontend
     webpack
 
+### Profiles
+
+The project comes prepared for being used in three different environments plus 
+another one for testing. We use Spring Profiles in combination with Boot feature for 
+loading properties files by naming convention (application-*\<profile name\>*.properties).
+
+You can find the profile constants in 
+[StarterProfiles](spring-boot-react-webpack-starter/src/main/java/com/dlizarra/starter/StarterProfiles.java) 
+and the properties files in `src/main/resources`.
+
+### Database
+The database connections are configured in 
+[DatabaseConfig](src/main/java/com/dlizarra/starter/DatabaseConfig.jav)
+where we can find a working H2 embedded database 
+
 ## Tech stack and libraries
+### Backend
+- Spring
+
+
+
+---

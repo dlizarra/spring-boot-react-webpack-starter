@@ -131,7 +131,7 @@
 				<artifactId>coveralls-maven-plugin</artifactId>
 				<version>${coveralls-plugin.version}</version>
 				<configuration>
-					<repoToken>coveralls repository token</repoToken>
+					<repoToken>your coveralls repository token goes here</repoToken>
 				</configuration>
 			</plugin>
 			<!-- Frontend -->
