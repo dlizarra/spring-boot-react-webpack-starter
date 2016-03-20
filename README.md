@@ -40,7 +40,7 @@ so every time we make a change in our files an application restart will
 be triggered automatically.
 
 Keep in mind that Spring DevTools automatic restart only works if we run the 
-application by running the main method in `StarterMain`, and not if for example we run 
+application by running the main method in our app, and not if for example we run 
 the app with maven with `mvn spring-boot:run`.
 
 In the **frontend** we use Webpack Dev Server hot module replacement 
