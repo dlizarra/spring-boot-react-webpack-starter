@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.dlizarra.starter.role.RoleName;
+import com.dlizarra.starter.role.Role;
 import com.dlizarra.starter.support.orika.OrikaBeanMapper;
 
 @Service
@@ -24,14 +25,14 @@ public class UserServiceImpl implements UserService {
 	@Transactional
 	@Override
 	public void createUser(final UserDto userDto, final RoleName roleName) {
-//		final User user = mapper.map(userDto, User.class);
-//		final Role role = new Role();
-//		role.setRolename(roleName);
-//		role.setUser(user);
-//		user.getRoles().add(role);
-//		user.setEnabled(true);
-//
-//		userRepository.save(user);
+		final User user = mapper.map(userDto, User.class);
+		final Role role = new Role();
+		role.setRolename(roleName);
+		role.setUser(user);
+		user.getRoles().add(role);
+		user.setEnabled(true);
+
+		userRepository.save(user);
 	}
 
 	@Transactional(readOnly = true)
