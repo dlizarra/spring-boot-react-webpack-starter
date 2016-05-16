@@ -10,7 +10,7 @@ To run the app you just need to:
     cd starter
     mvn spring-boot:run
 
-Now you can:
+To check everything is running you can:
 
     # Visit the homepage
     http://localhost:8080
@@ -93,6 +93,9 @@ The only thing you need to do is to create an account in [Coveralls.io](http://c
 
 And if you want to use different tools you just need to remove the plugins from the pom.
 
+### Linting
+We added ESLint preconfigured with Airbnb rules, which you can override and extend in [.eslintrc.js](src/main/frontend/.eslintrc.js) file. To lint the code you can run `npm run eslint` or configure your IDE/text editor to do so.
+
 ### Continuous integration and deployment
 A [travis.yml](.travis.yml) file is included with a minimal configuration just to use jdk 8, trigger the code analysis tool and deploy the app to Heroku using the `api_key` in the file. 
 
@@ -105,16 +108,15 @@ We also included a Heroku [Procfile](Procfile) which declares the `web` process 
 
 The Maven goal `generate-resources` will execute the frontend-maven-plugin to install Node
 and Npm the first time, run npm install to download all the libraries  that are not 
-present already and tell webpack to generate our `bundle.js`. It's the equivalent of running `webpack` 
-or `npm start` on a terminal.
+present already and tell webpack to generate our `bundle.js`. It's the equivalent of running `npm run build` or `npm start` on a terminal.
 
-#### Run Maven and Webpack separately
+#### Run Maven and Webpack separately (no hot-reloading)
 
     mvn spring-boot:run
 In a second terminal:
     
     cd src/main/frontend
-    webpack
+    npm run build
 
 ## Tech stack and libraries
 ### Backend
@@ -138,5 +140,6 @@ In a second terminal:
 - [Axios](https://github.com/mzabriskie/axios)
 - [Babel](https://babeljs.io/)
 - [ES6](http://www.ecma-international.org/ecma-262/6.0/)
+- [ESLint](http://eslint.org/)
 
 ---
