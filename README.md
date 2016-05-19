@@ -1,7 +1,7 @@
 # Spring Boot and React starter app
 
 > Starter webapp using Spring Boot on the backend and React on the frontend, with 
-Maven and Webpack as build tools, with hot reloading on both sides and with no xml configuration.
+Maven and Webpack as build tools, hot reloading on both sides and with no xml configuration.
 
 ## Quickstart
 To run the app you just need to:
