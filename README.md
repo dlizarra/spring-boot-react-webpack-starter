@@ -1,7 +1,7 @@
 # Spring Boot and React starter app
 
 > Starter webapp using Spring Boot on the backend and React on the frontend, with 
-Maven and Webpack as build tools, hot reloading on both sides and with no xml configuration.
+Maven and Webpack as build tools, hot reloading on both sides and without xml configuration.
 
 ## Quickstart
 To run the app you just need to:
@@ -41,7 +41,7 @@ be triggered automatically.
 
 Keep in mind that Spring DevTools automatic restart only works if we run the 
 application by running the main method in our app, and not if for example we run 
-it using  maven with `mvn spring-boot:run`.
+the app with maven with `mvn spring-boot:run`.
 
 In the **frontend** we use Webpack Dev Server hot module replacement 
 through the npm script `start`. Once the script is running the Dev Server will be 
@@ -64,7 +64,14 @@ and the properties files in `src/main/resources`.
 ### Database
 The database connections are configured in 
 [DatabaseConfig](src/main/java/com/dlizarra/starter/DatabaseConfig.java)
-where we can find a working H2 embedded database connection for the default profile and the staging and production configurations examples for working with an external database.
+where we can find a working H2 embedded database connection for the default profile, and the staging and production configurations examples for working with an external database.
+
+### Repository layer
+The project includes three base data repositories:
+
+- [ReadOnlyRepository](src/main/java/com/dlizarra/starter/support/jpa/ReadOnlyRepository.java): We can use this base repository when we want to make sure the application doesn't insert or update that type of entity, as it just exposes a set of methods to read entities.
+- [CustomCrudRepository](src/main/java/com/dlizarra/starter/support/jpa/CustomCrudRepository.java): It's the same as the `CrudRepository` that Spring Data provides, but the `findOne`method in the custom version returns a Java 8 `Optional<T>` object instead of `<T>`. It's just a small difference but it avoids having to override the `findOne` method in every repository to make it return an `Optional` object. This repository is intended to be used when we don't need paging or sorting capabilities for that entity.
+- [CustomJpaRepository](src/main/java/com/dlizarra/starter/support/jpa/CustomJpaRepository.java): Again, it's there to provide the same funcionality as the Spring `JpaRepository` but returning `Optional<T>`. We can extend this base repository if we want CRUD operations plus paging and sorting capabilities.
 
 ### Security
 All the boilerplate for the initial Spring Security configuration is already created. These are they key classes:
