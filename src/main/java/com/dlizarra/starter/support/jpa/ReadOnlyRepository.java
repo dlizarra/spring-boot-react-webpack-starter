@@ -2,6 +2,7 @@ package com.dlizarra.starter.support.jpa;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -18,7 +19,7 @@ public interface ReadOnlyRepository<T, ID extends Serializable> extends Reposito
 	 * @param id - must not be null.
 	 * @return the entity with the given id or null if none found.
 	 */
-	T findOne(ID id);
+	Optional<T> findOne(ID id);
 
 	/**
 	 * Returns all instances of the type.
@@ -30,7 +31,7 @@ public interface ReadOnlyRepository<T, ID extends Serializable> extends Reposito
 	/**
 	 * Returns all instances of the type sorted by the type.
 	 *
-	 * @param A {@link Sort} object applied to the returned elements list.
+	 * @param sort {@link Sort} object applied to the returned elements list.
 	 * @return sorted list
 	 */
 	List<T> findAll(Sort sort);
@@ -38,7 +39,7 @@ public interface ReadOnlyRepository<T, ID extends Serializable> extends Reposito
 	/**
 	 * Returns a Page of entities meeting the paging restriction provided in the Pageable object.
 	 *
-	 * @param Pageable object for pagination information.
+	 * @param pageable object for pagination information.
 	 * @return A Page of entities.
 	 */
 	Page<T> findAll(Pageable pageable);
