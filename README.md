@@ -1,7 +1,7 @@
 # Spring Boot and React starter app
 
 > Starter webapp using Spring Boot on the backend and React on the frontend, with 
-Maven and Webpack as build tools, with hot reloading on both sides and with no xml configuration.
+Maven and Webpack as build tools, hot reloading on both sides and with no xml configuration.
 
 ## Quickstart
 To run the app you just need to:
@@ -41,7 +41,7 @@ be triggered automatically.
 
 Keep in mind that Spring DevTools automatic restart only works if we run the 
 application by running the main method in our app, and not if for example we run 
-the app with maven with `mvn spring-boot:run`.
+it using  maven with `mvn spring-boot:run`.
 
 In the **frontend** we use Webpack Dev Server hot module replacement 
 through the npm script `start`. Once the script is running the Dev Server will be 
