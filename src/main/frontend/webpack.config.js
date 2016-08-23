@@ -35,7 +35,7 @@ if (TARGET === 'start' || !TARGET) {
         devServer: {
             port: 9090,
             proxy: {
-                '/*': {
+                '/': {
                     target: 'http://localhost:8080',
                     secure: false,
                     prependPath: false
