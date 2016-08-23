@@ -16,7 +16,7 @@ To check everything is running you can:
     http://localhost:8080
     
     # Go to the sample REST endpoint
-    http://localhost:8080/users
+    http://localhost:8080/api/users
     
     # Login to the H2 console (JDBC URL: 'jdbc:h2:mem:embedded', user = 'h2')
     http://localhost:8080/h2-console
