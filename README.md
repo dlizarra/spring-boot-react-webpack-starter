@@ -29,7 +29,7 @@ The Java code is available at `src/main/java` as usual, and the frontend files a
 Run `StarterMain` class from your IDE.
 
 ### Running the frontend
-Go to `src/main/frontend` and run `npm start`.
+Go to `src/main/frontend` and run `npm start`. (Run `npm install` before that if it's the first time)
 
 Now we should work with `localhost:9090` (this is where we'll see our live changes reflected)
  instead of `localhost:8080`.
