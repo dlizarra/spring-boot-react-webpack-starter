@@ -142,7 +142,7 @@ In a second terminal:
 ### Frontend
 - [Node](https://nodejs.org/en/)
 - [React](https://facebook.github.io/react/)
-- [Redux](https://reduxframework.com/)
+- [Redux](http://redux.js.org/)
 - [Webpack](https://webpack.github.io/)
 - [Axios](https://github.com/mzabriskie/axios)
 - [Babel](https://babeljs.io/)
